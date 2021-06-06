@@ -10,7 +10,7 @@ namespace SuppliesPriceLister.DLL.Importer
         /// <summary>
         /// just import the file as it is
         /// </summary>
-        /// <param name="fileName"></param>
+        /// <param name="filePath"></param>
         /// <returns></returns>
         public IEnumerable<HumphriesViewModel> ImportFromCSV(string filePath)
         {   

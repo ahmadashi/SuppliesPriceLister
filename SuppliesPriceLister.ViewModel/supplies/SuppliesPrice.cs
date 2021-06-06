@@ -10,6 +10,6 @@ namespace SuppliesPriceLister.ViewModel.supplies
 
         public string itemName { get; set; }
 
-        public double price { get; set; } // all in dolars and AUD
+        public double price { get; set; } // all in dollars and AUD
     }
 }

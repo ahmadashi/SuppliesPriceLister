@@ -11,15 +11,13 @@ namespace SuppliesPriceLister.DLL.Importer
         /// <summary>
         /// just import the file as it is
         /// </summary>
-        /// <param name="fileName"></param>
+        /// <param name="filePath"></param>
         /// <returns></returns>
         public MegacorpViewModel ImportFromJson(string filePath)
         {
             List<MegacorpViewModel> xx = new List<MegacorpViewModel>();            
             using (StreamReader r = new StreamReader(filePath))
             {
-                
-
                 string json = r.ReadToEnd();
                 var items = JsonConvert.DeserializeObject<MegacorpViewModel>(json);
                 return items;

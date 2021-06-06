@@ -17,12 +17,13 @@ namespace SuppliesPriceLister
 
             var megacorpHelper = serviceProvider.GetService<IMegacorpHelper>();
             var humphriesHelper = serviceProvider.GetService<IHumphriesHelper>();
-                       
+            
+            // if the application not working as expected please make sure we have correct file pathes
             string humphriesFilePath = Path.GetFullPath(Path.Combine(Environment.CurrentDirectory, @"..\..\..\..\SuppliesPriceLister\", "humphries.csv"));
             string megacorpFilePath = Path.GetFullPath(Path.Combine(Environment.CurrentDirectory, @"..\..\..\..\SuppliesPriceLister\", "megacorp.json"));
 
             List<SuppliesPrice> suppliesPriceList = new List<SuppliesPrice>();
-
+            // more validatin can be added here before addrange
             suppliesPriceList.AddRange(humphriesHelper.GetSuppliesPriceList(humphriesFilePath));
             suppliesPriceList.AddRange(megacorpHelper.GetSuppliesPriceList(megacorpFilePath));
 

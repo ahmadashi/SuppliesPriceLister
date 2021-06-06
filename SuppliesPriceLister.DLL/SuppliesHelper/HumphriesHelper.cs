@@ -16,12 +16,16 @@ namespace SuppliesPriceLister.DLL.SuppliesHelper
         {
             _humphriesImporter = new HumphriesImporter();
             
-        }        
-        
+        }
 
-        public IEnumerable<SuppliesPrice> GetSuppliesPriceList(string fileName)
+        /// <summary>
+        /// Get Supplies Price List
+        /// </summary>
+        /// <param name="fileName"></param>
+        /// <returns></returns>
+        public IEnumerable<SuppliesPrice> GetSuppliesPriceList(string filePath)
         {
-            var items = _humphriesImporter.ImportFromCSV(fileName);
+            var items = _humphriesImporter.ImportFromCSV(filePath);
             var suppliesPricelist = items.Select(i => new SuppliesPrice { id = i.identifier, itemName = i.desc, price = getPrice(i.cost) });            
             return suppliesPricelist;
         }

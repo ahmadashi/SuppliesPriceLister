@@ -19,10 +19,14 @@ namespace SuppliesPriceLister.DLL.SuppliesHelper
             _megacorpImporter = new MegacorpImporter();
         }       
         
-
-        IEnumerable<SuppliesPrice> IMegacorpHelper.GetSuppliesPriceList(string fileName)
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="fileName"></param>
+        /// <returns></returns>
+        IEnumerable<SuppliesPrice> IMegacorpHelper.GetSuppliesPriceList(string filePath)
         {
-            var items = _megacorpImporter.ImportFromJson(fileName);
+            var items = _megacorpImporter.ImportFromJson(filePath);
             List<SuppliesViewModel> megacorpSupplies = new List<SuppliesViewModel>();
             
             foreach (var p in items.partners)
@@ -44,7 +48,7 @@ namespace SuppliesPriceLister.DLL.SuppliesHelper
             double price = 0;
             if (double.TryParse(priceInCents, out price))
             {
-                price = (price / 100); // convert cent to Dollar 
+                price = (price / 100); // convert cent to dollar 
                 price = (price / audUsdExchangeRate); // convert to AUD
                 return price;
             }
