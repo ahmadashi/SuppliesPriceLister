@@ -1,11 +1,12 @@
-﻿using System;
+﻿using SuppliesPriceLister.ViewModel.supplies;
+using System;
 using System.Collections.Generic;
 
 namespace SuppliesPriceLister.ViewModel
 {
     public class MegacorpViewModel
     {
-        public List<PartnersViewModel> partners { get; set; }
+        public List<PartnersViewModel> partners { get; set; }        
     }
 
     public class PartnersViewModel

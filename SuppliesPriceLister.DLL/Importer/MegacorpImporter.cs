@@ -13,10 +13,9 @@ namespace SuppliesPriceLister.DLL.Importer
         /// </summary>
         /// <param name="fileName"></param>
         /// <returns></returns>
-        public MegacorpViewModel ImportFromJson(string fileName)
+        public MegacorpViewModel ImportFromJson(string filePath)
         {
-            List<MegacorpViewModel> xx = new List<MegacorpViewModel>();
-            string filePath = Path.GetFullPath(Path.Combine(Environment.CurrentDirectory, @"..\..\..\..\SuppliesPriceLister\", fileName));
+            List<MegacorpViewModel> xx = new List<MegacorpViewModel>();            
             using (StreamReader r = new StreamReader(filePath))
             {
                 

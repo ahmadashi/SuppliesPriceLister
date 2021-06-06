@@ -7,9 +7,7 @@ namespace SuppliesPriceLister.DLL.Importer
     public interface IHumphriesImporter
     {
         //public void ImportFromJson(string fileName);
-        public List<HumphriesViewModel> ImportFromCSV(string fileName);
-
-
+        public IEnumerable<HumphriesViewModel> ImportFromCSV(string fileName);
 
     }
 }

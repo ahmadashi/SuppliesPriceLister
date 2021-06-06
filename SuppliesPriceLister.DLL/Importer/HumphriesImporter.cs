@@ -12,10 +12,8 @@ namespace SuppliesPriceLister.DLL.Importer
         /// </summary>
         /// <param name="fileName"></param>
         /// <returns></returns>
-        public List<HumphriesViewModel> ImportFromCSV(string fileName)
+        public IEnumerable<HumphriesViewModel> ImportFromCSV(string filePath)
         {   
-            string filePath = Path.GetFullPath(Path.Combine(Environment.CurrentDirectory, @"..\..\..\..\SuppliesPriceLister\", fileName));
-
             var reader = new StreamReader(File.OpenRead(filePath));
             List<HumphriesViewModel> items = new List<HumphriesViewModel>();
             int i = 0;
